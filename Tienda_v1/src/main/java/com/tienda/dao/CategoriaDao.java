@@ -13,7 +13,11 @@ public interface CategoriaDao {
 import com.tienda.domain.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;//jpa es una dependencia para extraer metodos que ya estan definidos para crear los cruds: leer, eliminar, actualizar, crear
 
-public interface CategoriaDao extends JpaRepository <Categoria,Long //id llave primaria de la categoria> {
+public interface CategoriaDao extends JpaRepository <Categoria,Long> {
+
+    @Override
+    public default <S extends Categoria> S save(S entity) {
+        throw new UnsupportedOperationException("Not supported yet."); //id llave primaria de la categoria> {
     
 }
     
