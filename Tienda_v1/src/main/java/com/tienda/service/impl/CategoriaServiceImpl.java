@@ -1,5 +1,12 @@
+package com.tienda.service.impl;
 
+import com.tienda.dao.CategoriaDao;
+import com.tienda.domain.Categoria;
 import com.tienda.service.CategoriaService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -9,17 +16,7 @@ import com.tienda.service.CategoriaService;
  *
  * @author Lizeth
  */
-public class CategoriaServiceImpl {
 
-    package com.tienda.service.impl ;
-
-    import com.tienda.dao.CategoriaDao ;
-    import com.tienda.domain.Categoria ;
-    import com.tienda.service.CategoriaService ;
-    import java.util.List ;//
-    import org.springframework.beans.factory.annotation.Autowired ;
-    import org.springframework.stereotype.Service ;//service es un estereotipo en java, esta clase es de servicio
-    import org.springframework.transaction.annotation.Transactional ;
 
     @Service
     public class CategoriaServiceImpl implements CategoriaService {
@@ -40,7 +37,7 @@ public class CategoriaServiceImpl {
         @Override
         @Transactional(readOnly = true)
         public Categoria getCategoria(Categoria categoria) {
-            return categoriaDao.findBy(categoria.getIdCategoria()).orElse(null);
+            return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
 
         }
 
@@ -59,4 +56,4 @@ public class CategoriaServiceImpl {
 
     }
 
-}
+

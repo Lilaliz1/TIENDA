@@ -10,7 +10,7 @@
  package com.tienda.service;
 import com.tienda.domain.Producto;
 import java.util.List;
-public interface ProductoService {
+
    
 
 
@@ -31,4 +31,4 @@ public interface ProductoService {
  
 }
     
-}
+

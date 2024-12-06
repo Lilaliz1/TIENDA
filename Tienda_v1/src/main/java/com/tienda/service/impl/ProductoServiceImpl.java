@@ -1,5 +1,13 @@
+package com.tienda.service.impl;
 
+
+import com.tienda.dao.ProductoDao;
+import com.tienda.domain.Producto;
 import com.tienda.service.ProductoService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -9,17 +17,8 @@ import com.tienda.service.ProductoService;
  *
  * @author Lizeth
  */
-public class ProductoServiceImpl {
 
-    package com.tienda.service.impl ;
-
-    import com.tienda.dao.ProductoDao ;
-    import com.tienda.domain.Producto ;
-    import com.tienda.service.ProductoService ;
-    import java.util.List ;//
-    import org.springframework.beans.factory.annotation.Autowired ;
-    import org.springframework.stereotype.Service ;//service es un estereotipo en java, esta clase es de servicio
-    import org.springframework.transaction.annotation.Transactional ;
+  
 
     @Service
     public class ProductoServiceImpl implements ProductoService {
@@ -40,7 +39,7 @@ public class ProductoServiceImpl {
         @Override
         @Transactional(readOnly = true)
         public Producto getProducto(Producto producto) {
-            return productoDao.findBy(producto.getIdProducto()).orElse(null);
+            return productoDao.findById(producto.getIdProducto()).orElse(null);
 
         }
 
@@ -59,4 +58,4 @@ public class ProductoServiceImpl {
 
     }
 
-}
+

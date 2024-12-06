@@ -1,4 +1,4 @@
-
+package com.tienda.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,17 +20,12 @@ import lombok.Data;
  *
  * @author Lizeth
  */
-public class Categoria {
-   package com.tienda.domain;
 
-import jakarta.persistence.*; //jpa repository extraer info de la BD
-import java.io.Serializable;// OBJETOS QUE ESTAN EN LA CLASE se puedan implementar en otros lugares
-import lombok.Data;// metodos autom[aticamente definirle a java que esto es una clase de datos
 
 @Data //clase de datos
 @Entity //se va a mapear con una tabla de la BD la de techshop
 @Table(name="categoria")
-//public class Categoria implements Serializable {//
+public class Categoria implements Serializable {//
     
     private static final long serialVersionUID = 1L;//constante que permite doble confirmacion que tod lo que haya en esta clase se pueda serializar, si en algun momento se modifica un numero
     //en la BD que no haya incompatibilidad con este codigo, hace una doble verificcion de formato o numero acomoda los datos a como estan en la BD
@@ -55,4 +50,4 @@ import lombok.Data;// metodos autom[aticamente definirle a java que esto es una 
         this.activo = activo;
     }
 } 
-}
+

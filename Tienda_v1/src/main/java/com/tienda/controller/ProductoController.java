@@ -8,25 +8,22 @@
  */
 package com.tienda.controller;
 
+import com.tienda.domain.Producto;
 import com.tienda.service.CategoriaService;
+import com.tienda.service.ProductoService;
 import com.tienda.service.impl.FirebaseStorageServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-public class ProductoController {
 
-    import com.tienda.service.ProductoService ;
-    import lombok.extern.slf4j.Slf4j ;
-    import org.springframework.beans.factory.annotation.Autowired ;
-    import org.springframework.stereotype.Controller ;
-    import org.springframework.ui.Model ;
-    import org.springframework.web.bind.annotation.GetMapping ;
-    import org.springframework.web.bind.annotation.RequestMapping ;
+  
 
     @Controller
     @Slf4j //es un lonbook permite que cuando estemos registrando info permite darle seguimiento a los errores que se pueden dar
@@ -42,7 +39,7 @@ public class ProductoController {
         @GetMapping("/listado")//lista de las productos
         public String inicio(Model model) {//se ejcuta cuando se llame a listado
             var productos = productoService.getProductos(false);
-            var categorias = categoriaService.getcategorias(false);
+            var categorias = categoriaService.getCategorias(false);
 
             model.addAttribute("productos", productos);
              model.addAttribute("categorias", categorias);
@@ -89,4 +86,4 @@ public class ProductoController {
             return "/producto/modifica";
         }
     }
-}
+

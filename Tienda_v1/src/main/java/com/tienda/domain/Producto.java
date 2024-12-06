@@ -1,7 +1,17 @@
+package com.tienda.domain;
 
+
+import com.tienda.domain.Categoria;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import java.io.Serializable;
+import lombok.Data;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,12 +22,8 @@ import jakarta.persistence.Id;
  *
  * @author Lizeth
  */
-public class Producto {
-   package com.tienda.domain;
 
-import jakarta.persistence.*; //jpa repository extraer info de la BD
-import java.io.Serializable;// OBJETOS QUE ESTAN EN LA CLASE se puedan implementar en otros lugares
-import lombok.Data;// metodos autom[aticamente definirle a java que esto es una clase de datos
+ 
 
 @Data //clase de datos
 @Entity //se va a mapear con una tabla de la BD la de techshop
@@ -53,4 +59,4 @@ public class Producto implements Serializable {//
         this.activo = activo;
     }
 } 
-}
+

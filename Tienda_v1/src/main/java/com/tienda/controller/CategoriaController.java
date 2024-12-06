@@ -10,23 +10,21 @@
 
    package com.tienda.controller;
 
-import com.tienda.service.impl.FirebaseStorageServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-
-public class CategoriaController {
- 
-
+import com.tienda.domain.Categoria;
 import com.tienda.service.CategoriaService;
+import com.tienda.service.impl.FirebaseStorageServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+
+
 
 @Controller
 @Slf4j //es un lonbook permite que cuando estemos registrando info permite darle seguimiento a los errores que se pueden dar
@@ -79,4 +77,4 @@ public class CategoriaController {
         return "/categoria/modifica";
     }
 }
-}
+
