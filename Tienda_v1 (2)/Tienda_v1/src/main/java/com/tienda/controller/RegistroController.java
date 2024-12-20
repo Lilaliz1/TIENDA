@@ -6,6 +6,7 @@ package com.tienda.controller;
 
 import com.tienda.domain.Usuario;
 import com.tienda.service.RegistroService;
+import jakarta.mail.MessagingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
